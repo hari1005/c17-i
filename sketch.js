@@ -7,7 +7,7 @@ roboHeadImg=loadImage("roboHead - Copy.png")
 
 function setup() {
     createCanvas(400, 400);
-    roboHead= createSprite(330,250,40,50);
+    roboHead= createSprite(330,200,40,50);
    roboBody= createSprite(340,300,40,50);
    roboBody.addImage(roboBodyImg);
   roboBody.scale=0.5;
@@ -24,9 +24,9 @@ function draw() {
   roboHead.x=World.mouseX-10;
   if(mousePressedOver(roboBody)){
    
-    roboHead.y=200;
+    roboHead.y=150;
   }else{
-    roboHead.y=250;
+    roboHead.y=200;
   }
   drawSprites();
 }
