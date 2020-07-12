@@ -1,14 +1,17 @@
-var roboBody,roboHead;
+var roboBody,roboBodyImg,roboHead;
+
+function preload(){
+roboBodyImg=loadImage("roboBody.png")
+roboHeadImg=loadImage("roboHead - Copy.png")
+}
 
 function setup() {
     createCanvas(400, 400);
+    roboHead= createSprite(330,250,40,50);
    roboBody= createSprite(340,300,40,50);
- roboHead= createSprite(330,230,40,50);
- 
-   roboBody.addImage("roboBody.png");
-  roboBody.scale=0.45;
-   roboHead.addImage("roboHead.png");
-  roboHead.addImage("roboHead - Copy.png");
+   roboBody.addImage(roboBodyImg);
+  roboBody.scale=0.5;
+  roboHead.addImage(roboHeadImg);
   roboHead.scale=0.5;
 }
 
@@ -20,10 +23,10 @@ function draw() {
   roboBody.x=World.mouseX;
   roboHead.x=World.mouseX-10;
   if(mousePressedOver(roboBody)){
-    roboHead.changeImage("roboHead - Copy.png");
-    roboHead.y=135;
+   
+    roboHead.y=200;
   }else{
-    roboHead.y=230;
+    roboHead.y=250;
   }
   drawSprites();
 }
